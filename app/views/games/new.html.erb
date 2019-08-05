@@ -1,0 +1,17 @@
+
+<div class="container p-3">
+  <h1>New Game</h1>
+
+  <ul class="d-flex list-unstyled">
+    <% @letters.each do |letter| %>
+    <li class="card p-4 m-2 bg-primary text-white font-weight-bold shadow"> <%= letter %></li>
+    <% end %>
+  </ul>
+
+  <form action="/score" method="post" class="d-flex form-group">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letters, @letters %>
+    <input type="text" name="word" placeholder="Put in the longest word" class="form-control">
+    <input type="submit" value="Submit" class="btn btn-primary">
+  </form>
+</div>

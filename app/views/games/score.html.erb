@@ -1,0 +1,14 @@
+<div class="container p-3">
+<h1>Result</h1>
+
+<% if (@valid == "win") %>
+<p><b>Congratulations!</b> <%= @word.upcase %> is a valid English word!</p>
+<% elsif  @valid == "almost"%>
+<p>Sorry but <b> <%= @word %> </b> can't be built out of <%= @letters.join(", ") %></p>
+<% else %>
+<p>Sorry but <b> <%= @word %> </b> does not seem to be a valid English word...</p>
+<% end %>
+
+<p>Current Score: <%= session[:score] %></p>
+<%= link_to "Play Again", new_path %>
+</div>
