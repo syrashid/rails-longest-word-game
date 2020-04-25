@@ -3,9 +3,7 @@ require 'json'
 
 class GamesController < ApplicationController
   def new
-    letter_grid = []
-    10.times { letter_grid << ('A'..'Z').to_a[rand(26)] }
-    @letters = letter_grid
+    @letters = 10.times.collect { ('A'..'Z').to_a[rand(26)] }
   end
 
   def score

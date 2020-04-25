@@ -27,9 +27,6 @@ class GamesTest < ApplicationSystemTestCase
 
   test "Filling in the form with a valid english word in the grid should return congrats message" do
     visit new_url
-    within("//li[@id='letter']") do
-      fill_in 'Name', :with => 'Jimmy'
-    end
     fill_in "word", with: "A"
     click_on "Submit"
 
